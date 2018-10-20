@@ -10,9 +10,16 @@ export default class Call extends Component {
       feeling: null // 'happy', 'meh', 'sad'
     };
   }
-  handleFeelingSelect = (evt) => {
-    console.log('evt', evt);
-    // this.setState({ feeling: })
+  handleFeelingSelect = (feeling) => {
+    this.setState({ feeling: feeling }, () => {
+      if (this.state.feeling === 'sad') {
+        Alert.alert("", "Phone a friend.");
+      } else if (this.state.feeling === 'meh') {
+        Alert.alert("", "Let's go for a walk.");
+      } else if (this.state.feeling === 'happy') {
+        Alert.alert("", "Meditate.");
+      }
+    });
   }
   render() {
     return (
@@ -20,19 +27,19 @@ export default class Call extends Component {
         <Nav />
         <Text style = {styles.welcome}>How are you feeling today?</Text>
         <View style={{flex: 1, flexDirection: 'row'}}>
-          <TouchableOpacity feeling="happy" onClick={this.handleFeelingSelect}>    
+          <TouchableOpacity onPress={() => this.handleFeelingSelect("happy")}>    
             <Image
               style={{width: 50, height: 50}}
               source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw2sLea7UmQDdfy2FePgXYdx9ETNRNytAvX4cJ13fuUi3mieCRWQ'}}
               />
           </TouchableOpacity>
-          <TouchableOpacity feeling="sad" onClick={this.handleFeelingSelect}>    
+          <TouchableOpacity onPress={() => this.handleFeelingSelect("meh")}>
             <Image 
               style={{width: 50, height: 50}}
               source={{uri: 'https://cdn3.iconfinder.com/data/icons/social-productivity-black-line-3/1/31-512.png'}}
             />
           </TouchableOpacity>
-          <TouchableOpacity feeling="happy" onClick={this.handleFeelingSelect}>    
+          <TouchableOpacity feeling="happy" onPress={() => this.handleFeelingSelect("sad")}>    
             <Image
               style={{width: 50, height: 50}}
               source={{uri: 'https://cdn3.iconfinder.com/data/icons/pictomisc/100/sadface-512.png'}}
