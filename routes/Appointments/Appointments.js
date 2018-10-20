@@ -14,8 +14,8 @@ export default class Appointments extends Component {
             style = {styles.button}
             onPress = {this.openSetAppointment}
             ><Text style={styles.text}>Set Next Appointment!!</Text></View>
-          <Text>Last Appointment</Text>
-          <Text>2018-26-10</Text>
+          <Text style={styles.h1}>Last Appointment</Text>
+          <Text style={styles.h2}>2018-26-10</Text>
         </TouchableOpacity>
       </View>
     )
@@ -35,10 +35,21 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: 'black',
     borderRadius: 5,
+    padding: 10,
     margin: 20
   },
   text: {
     fontSize: 15,
+    alignSelf: "center",
     color: 'red'
+  },
+
+  h1: {
+    fontSize: 30,
+    color: 'white'
+  },
+
+  h2: {
+    fontSize: 20
   }
 })
