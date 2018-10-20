@@ -3,6 +3,14 @@ import { Button, Image, StyleSheet, Text, View } from 'react-native';
 import quotes from '../../sample-quotes.js';
 
 class QuoteGenerator extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      quotes: quotes
+    }
+  } 
+  
   render() {
     return (
       <View>
