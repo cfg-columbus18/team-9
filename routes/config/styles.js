@@ -33,8 +33,8 @@ export default StyleSheet.create({
     },
 
     textsub: {
-        width: 50,
-        height: 25,
+        // width: 50,
+        // height: 25,
         fontSize: 15,
         color: 'black'
       },    
