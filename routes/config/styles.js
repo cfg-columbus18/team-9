@@ -12,7 +12,8 @@ export default StyleSheet.create({
         flexDirection: 'column',
         //justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFF5E6',
+        backgroundColor: '#FFF',
+        // backgroundColor: '#FFF5E6',
         height: '100%'
     },
 
@@ -33,8 +34,8 @@ export default StyleSheet.create({
     },
 
     textsub: {
-        width: 50,
-        height: 25,
+        // width: 50,
+        // height: 25,
         fontSize: 15,
         color: 'black'
       },    

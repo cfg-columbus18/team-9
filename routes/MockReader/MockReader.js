@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TextInput, Image, Alert, TouchableOpacity, Picker } from 'react-native';
+import Nav from '../../components/Nav';
+import globalStyles from '../config/styles';
 
 export default class MockReader extends Component {
   constructor() {
@@ -22,19 +24,21 @@ unpdateread = () =>{
 }
   render() {
     return (
-      <View style={styles.main}>
-       
-          <TouchableOpacity onPress={this.unpdateread}>
-          <View>
-           
-            <Text style = {styles.text}>{this.state.analyzing}</Text>
+      <View style={globalStyles.main}>
+          <Nav />
+          <View style={globalStyles.container}>
+            <TouchableOpacity onPress={this.unpdateread}>
+            <View style={styles.sub}>
+            
+              <Text style = {styles.text}>{this.state.analyzing}</Text>
 
-             <Image 
-          style={{width: 100, height: 100}}
-          source={{uri: this.state.photo }}
-           />
-          </View>
-        </TouchableOpacity>     
+              <Image 
+            style={{width: 100, height: 100}}
+            source={{uri: this.state.photo }}
+            />
+            </View>
+          </TouchableOpacity>
+        </View> 
       </View>
     )
   }
@@ -47,8 +51,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignSelf: 'center',
     justifyContent: 'center',
-    alignItems:'center'
+    alignItems:'center',
     //top:200
+  },
+  sub: {
+    flex: 1
   },
   text: {
    // width:350,
