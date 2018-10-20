@@ -32,7 +32,7 @@ unpdateLang = (lang) =>{
               <View style={{flex: 1, flexDirection: 'column'}}>
                   <Text style={styles.first} >
 
-                   10 Mindfullness:
+                   10 Mindfulness:
                   </Text>
 
                    <Image
