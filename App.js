@@ -14,20 +14,14 @@ import Preferences from './routes/Preferences/Preferences';
 const DrawerStack = createDrawerNavigator({
   Preferences: Preferences,
 }, {
-  initialRouteName: 'Template',
+  initialRouteName: 'Home',
   drawerPosition: 'left',
-});
-
-const RootStack = createStackNavigator({
-  Root: DrawerStack
-}, {
-  initialRouteName: 'Root',
 });
 
 export default class App extends Component {
   render() {
     return (
-      <RootStack />
+      <DrawerStack />
     );
   }
 }
