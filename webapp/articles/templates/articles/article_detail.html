@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="article-detail">
+    <div class="article">
+        <img src="{{ article.picture.url }}" />
+        <h2>{{ article.title }}</h2>
+        <h3>Hosting By {{ article.author.username }}</h3>
+        <p>{{ article.body }}</p>
+        <p>Event Date: {{ article.date }}</p>
+        <p class="pp">Price: ${{ article.price }}</p>
+        <p>Contact To: {{ article.phone }}</p>
+    </div>
+</div>
+{% endblock %}
