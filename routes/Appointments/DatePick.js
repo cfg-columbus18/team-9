@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 export default class DatePick extends Component {
@@ -10,11 +10,16 @@ export default class DatePick extends Component {
             time: '20:00'
         };
       }
+
+      navigateBack = () => {
+        this.props.navigation.navigate.goBack()
+      }
+            
       render() {
         return (
         <View style={styles.main}>
+            <Text style={styles.h1}>Select Appointment Date</Text>
             <TouchableOpacity onPress={this.openSetAppointment}>
-                <Text style={styles.h1}>Select Appointment Date</Text>
                 <DatePicker
                     style= {styles.date}
                     date = {this.state.date}
@@ -35,7 +40,9 @@ export default class DatePick extends Component {
                     onDateChange={(date) => {this.setState({date:date})} 
                 }
                 />
-                <Text style={styles.h1}>Select Time</Text>
+            </TouchableOpacity>
+            <Text style={styles.h1}>Select Time</Text>
+            <TouchableOpacity onPress={this.openSetAppointment}>
                 <DatePicker
                     style= {styles.date}
                     time = {this.state.time}
@@ -56,7 +63,12 @@ export default class DatePick extends Component {
                     onDateChange={(time) => {this.setState({time:time})} 
                 }
                 />
-        </TouchableOpacity>
+            </TouchableOpacity> 
+            <View style={styles.button}>
+            <TouchableOpacity onPress={this.navigateBack}>
+            <Text style={styles.text}>Submit</Text>
+            </TouchableOpacity>
+            </View>   
       </View>
     )
   }
@@ -68,7 +80,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'orange',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'center'
   },
   date: {
       width: 200,

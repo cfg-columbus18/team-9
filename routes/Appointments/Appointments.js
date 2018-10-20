@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 export default class Appointments extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      LastAptDate: '2018-05-05',
+    };
+  }
+  
   navigateToPickDate = () => {
     this.props.navigation.navigate('DatePick')
   }
