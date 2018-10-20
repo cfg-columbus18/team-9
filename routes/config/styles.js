@@ -61,19 +61,29 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
 
-    title: {
-
+    text: {
+        fontSize: 25,
+        alignSelf: "center",
+        color: 'red'
+    
     },
 
-    text: {
-
+    buttontext:{
+        color: 'white',
     },
 
     button: {
-
+        //flexWrap : 'wrap',
+        height: 50,
+        backgroundColor: 'black',
+        borderRadius: 5,
+        padding: 10,
+        margin: 20    
     },
 
-    label: {
-
+    date: {
+        width: 200,
+        marginVertical: 10
     },
+  
 });

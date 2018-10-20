@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Nav from '../../components/Nav';
+import StyleSheet from '../config/styles';
+import Home from './Home';
 
 export default class Appointments extends Component {
   constructor(props){
@@ -13,51 +15,21 @@ export default class Appointments extends Component {
   navigateToPickDate = () => {
     this.props.navigation.navigate('DatePick')
   }
+
   render() {
     return (
-      <View style={styles.main}>
-        <Nav />
+      <View style={StyleSheet.main}>
+        <Nav/>
+        <View style={StyleSheet.container}>
         <TouchableOpacity onPress={this.navigateToPickDate}>
-          <View 
-            style = {styles.button}
-            onPress = {this.navigateToPickDate}
-            ><Text style={styles.text}>Set Next Appointment!!</Text></View>
+          <View style = {StyleSheet.button}
+            onPress = {this.navigateToPickDate}>
+            <Text style={StyleSheet.buttontext}>Set Next Appointment!!</Text></View>
           </TouchableOpacity>
-          <Text style={styles.h1}>Last Appointment</Text>
-          <Text style={styles.h2}>2018-26-10</Text>
+          <Text style={StyleSheet.text}>Last Appointment</Text>
+          <Text style={StyleSheet.text}>2018-26-10</Text>
+      </View>
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  // https://facebook.github.io/react-native/docs/stylesheet
-  main: {
-    flex: 1,
-    backgroundColor: 'orange',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  button: {
-    flexWrap : 'wrap',
-    height: 50,
-    backgroundColor: 'black',
-    borderRadius: 5,
-    padding: 10,
-    margin: 20
-  },
-  text: {
-    fontSize: 15,
-    alignSelf: "center",
-    color: 'white'
-  },
-
-  h1: {
-    fontSize: 30,
-    color: 'white'
-  },
-
-  h2: {
-    fontSize: 20
-  }
-})

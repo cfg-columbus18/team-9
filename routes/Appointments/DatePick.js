@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+import StyleSheet from '../config/styles';
+import Nav from '../../components/Nav';
 
 export default class DatePick extends Component {
     constructor(props) {
@@ -10,18 +12,17 @@ export default class DatePick extends Component {
             time: '20:00'
         };
       }
-
-      navigateBack = () => {
-        this.props.navigation.navigate.goBack()
-      }
             
       render() {
         return (
-        <View style={styles.main}>
-            <Text style={styles.h1}>Select Appointment Date</Text>
+
+            <View style={StyleSheet.main}>
+            <Nav/>
+            <View style={StyleSheet.container}>
+            <Text style={StyleSheet.text}>Select Appointment Date</Text>
             <TouchableOpacity onPress={this.openSetAppointment}>
                 <DatePicker
-                    style= {styles.date}
+                    style= {StyleSheet.date}
                     date = {this.state.date}
                     mode = 'date'
                     placeholder={this.state.date}
@@ -41,10 +42,10 @@ export default class DatePick extends Component {
                 }
                 />
             </TouchableOpacity>
-            <Text style={styles.h1}>Select Time</Text>
+            <Text style={StyleSheet.text}>Select Time</Text>
             <TouchableOpacity onPress={this.openSetAppointment}>
                 <DatePicker
-                    style= {styles.date}
+                    style= {StyleSheet.date}
                     time = {this.state.time}
                     mode = 'time'
                     placeholder={this.state.time}
@@ -64,47 +65,13 @@ export default class DatePick extends Component {
                 }
                 />
             </TouchableOpacity> 
-            <View style={styles.button}>
+            <View style={StyleSheet.button}>
             <TouchableOpacity onPress={this.navigateBack}>
-            <Text style={styles.text}>Submit</Text>
+            <Text style={StyleSheet.text}>Submit</Text>
             </TouchableOpacity>
+            </View>
             </View>   
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  // https://facebook.github.io/react-native/docs/stylesheet
-  main: {
-    flex: 1,
-    backgroundColor: 'orange',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  date: {
-      width: 200,
-  },
-  button: {
-    flexWrap : 'wrap',
-    height: 50,
-    backgroundColor: 'black',
-    borderRadius: 5,
-    padding: 10,
-    margin: 20
-  },
-  text: {
-    fontSize: 15,
-    alignSelf: "center",
-    color: 'red'
-  },
-
-  h1: {
-    fontSize: 30,
-    color: 'white'
-  },
-
-  h2: {
-    fontSize: 20
-  }
-})
