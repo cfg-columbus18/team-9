@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
    // height: 25,
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
+    fontFamily: 'VINCHAND'
     
   }
 })

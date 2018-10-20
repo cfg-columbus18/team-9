@@ -20,7 +20,7 @@ export default StyleSheet.create({
     welcome: {
         fontSize: 30,
         textAlign: 'center',
-        fontFamily: 'Cochin',
+        fontFamily: 'VINCHAND',
         color: 'purple',
         margin: 10,    
     },
@@ -65,12 +65,14 @@ export default StyleSheet.create({
     text: {
         fontSize: 25,
         alignSelf: "center",
-        color: 'red'
+        color: 'red',
+        fontFamily: 'VINCHAND'
     
     },
 
     buttontext:{
         color: 'white',
+        fontFamily: 'VINCHAND'
     },
 
     button: {

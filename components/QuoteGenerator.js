@@ -18,7 +18,7 @@ class QuoteGenerator extends Component {
   render() {
     return (
       <View>
-        <Text>{this.randomQuote()}</Text>
+        <Text style={{fontFamily: 'VINCHAND'}}>{this.randomQuote()}</Text>
       </View>
     )
   }

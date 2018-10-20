@@ -121,13 +121,15 @@ const styles = StyleSheet.create({
     height: 35,
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
+    fontFamily: 'notoserif'
   },
 
   
   textTwo: {
     marginTop: 10,
-    marginLeft: 25
+    marginLeft: 25,
+    fontFamily: 'notoserif'
     
   },
 

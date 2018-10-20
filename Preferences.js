@@ -115,13 +115,15 @@ const styles = StyleSheet.create({
     height: 25,
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
+    fontFamily: 'VINCHAND'
   },
     textsub: {
     width:150,
     height: 25,
     fontSize: 15,
-    color: 'black'
+    color: 'black',
+    fontFamily: 'VINCHAND'
   },
   parent: {
     position: 'absolute',
