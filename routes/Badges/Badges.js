@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Badge } from 'react-native-material-ui';
+import Nav from '../../components/Nav';
 
 export default class Badges extends Component {
   constructor() {
@@ -125,12 +126,13 @@ export default class Badges extends Component {
     const { badges } = this.state;
     return (
       <View style={styles.main}>
+        <Nav />
         <View style={{flex: 0.175, alignItems: 'center', justifyContent: 'center'}}>
           <Text style={{fontWeight: '500', fontSize: 28}}>Badges</Text>
         </View>
         <View style={styles.sub}>
           {Object.values(badges).map((badge, i) => {
-            const size = 46;
+            const size = 40;
             // <View style={{width: 100, backgroundColor: 'yellow', height: 50}}>
             return (
               <View key={i} style={{ padding: 15, margin: 10, backgroundColor: 'grey', borderRadius: 100, borderColor: '#000', borderWidth: 2 }}>
