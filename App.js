@@ -9,10 +9,10 @@
 import React, {Component} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import Template from './routes/Template/Template';
+import Preferences from './routes/Preferences/Preferences';
 
 const DrawerStack = createDrawerNavigator({
-  Template: Template,
+  Preferences: Preferences,
 }, {
   initialRouteName: 'Template',
   drawerPosition: 'left',
