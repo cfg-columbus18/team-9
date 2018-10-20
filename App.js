@@ -9,12 +9,12 @@
 import React, {Component} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import Template from './routes/Template/Template';
+import Badges from './routes/Badges/Badges';
 
 const DrawerStack = createDrawerNavigator({
-  Template: Template,
+  Badges: Badges,
 }, {
-  initialRouteName: 'Template',
+  initialRouteName: 'Badges',
   drawerPosition: 'left',
 });
 
