@@ -12,7 +12,7 @@ export default StyleSheet.create({
         flexDirection: 'column',
         //justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFF3F3',
+        backgroundColor: 'orange',
         height: '100%'
     },
 

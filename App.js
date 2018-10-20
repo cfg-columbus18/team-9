@@ -14,7 +14,6 @@ const DrawerStack = createDrawerNavigator({
 }, {
   initialRouteName: 'Survey',
   drawerPosition: 'left',
-//  navigationOptions: null
 });
 
 export default class App extends Component {
