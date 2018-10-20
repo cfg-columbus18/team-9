@@ -9,12 +9,13 @@
 import React, {Component} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import Template from './routes/Template/Template';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Home from './routes/Home/Home';
 
 const DrawerStack = createDrawerNavigator({
-  Template: Template,
+  Home: Home,
 }, {
-  initialRouteName: 'Template',
+  initialRouteName: 'Home',
   drawerPosition: 'left',
 });
 
@@ -22,6 +23,9 @@ const RootStack = createStackNavigator({
   Root: DrawerStack
 }, {
   initialRouteName: 'Root',
+  navigationOptions: {
+    headerLeft: <Icon name="bars" color="#000" />
+  }
 });
 
 export default class App extends Component {
