@@ -10,20 +10,20 @@ import React, {Component} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
-import Home from './routes/Home/Home';
+import Survey from './routes/Preferences/Survey';
 import Badges from './routes/Badges/Badges';
 import Appointments from './routes/Appointments/Appointments';
 import Preferences from './routes/Preferences/Preferences';
 import Summary from './routes/Summary/Summary';
 
 const DrawerStack = createDrawerNavigator({
-  Home: Home,
+  Survey: Survey,
   Badges: Badges,
   Appointments: Appointments,
   Preferences: Preferences,
   Summary: Summary
 }, {
-  initialRouteName: 'Home',
+  initialRouteName: 'Survey',
   drawerPosition: 'left',
 });
 
