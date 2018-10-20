@@ -12,7 +12,7 @@ export default StyleSheet.create({
         flexDirection: 'column',
         //justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'orange',
+        backgroundColor: '#FFF5E6',
         height: '100%'
     },
 
@@ -32,17 +32,17 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
 
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    textsub: {
+        width: 50,
+        height: 25,
+        fontSize: 15,
+        color: 'black'
+      },    
 
     image: {
         width: 50, 
         height: 50,
         margin: 40,
-        backgroundColor: '#FFF3F3',
     },
 
     badgeimage: {
