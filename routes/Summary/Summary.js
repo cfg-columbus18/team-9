@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TextInput, Alert, TouchableOpacity, Picker, Image } from 'react-native';
-
+import Nav from '../../components/Nav';
 
 export default class Summary extends Component {
 state = {lang: ''}
@@ -12,7 +12,7 @@ unpdateLang = (lang) =>{
   render() {
     return (
       <View style={styles.main}>
-       
+          <Nav />
           <View style={{flex: 1, flexDirection: 'column'}}>
 
             <View>
