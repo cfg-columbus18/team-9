@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TextInput, Alert, TouchableOpacity, Picker } from 'react-native';
+import Nav from '../../components/Nav';
 
 export default class Preferences extends Component {
 state = {lang: ''}
@@ -21,7 +22,7 @@ unpdateColor = (color) =>{
   render() {
     return (
       <View style={styles.main}>
-       
+          <Nav />
           <View style={{flex: 1, flexDirection: 'column'}}>
             <Text style={styles.text}>Preferences</Text>
             <View style={{flex: 1, flexDirection: 'row'}}>

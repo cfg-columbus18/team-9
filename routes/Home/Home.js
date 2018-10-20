@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Nav from '../../components/Nav';
 
 export default class Test extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Nav />
         <View style={styles.main}>
           <Text>Test</Text>
         </View>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Nav from '../../components/Nav';
 
 export default class Appointments extends Component {
   constructor(props){
@@ -15,6 +16,7 @@ export default class Appointments extends Component {
   render() {
     return (
       <View style={styles.main}>
+        <Nav />
         <TouchableOpacity onPress={this.navigateToPickDate}>
           <View 
             style = {styles.button}
