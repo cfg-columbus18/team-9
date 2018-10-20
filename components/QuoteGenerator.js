@@ -18,7 +18,7 @@ class QuoteGenerator extends Component {
   render() {
     return (
       <View>
-        <Text>Hello World!</Text>
+        <Text>{this.randomQuote()}</Text>
       </View>
     )
   }
