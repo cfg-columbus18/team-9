@@ -1,39 +1,39 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Responsive Sticky Navbar</title>
-      <link rel="stylesheet" href="{% static 'style2.css' %}">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
-<body>
-      <div class="wrapper">
-            <header>
-
-                  <nav>
-
-                        <div class="menu-icon">
-                              <i class="fa fa-bars fa-2x"></i>
-                        </div>
-
-                        <div class="logo">
-                              OhioGuideStone
-                        </div>
-
-                        <div class="menu">
-                              <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="activities/">Activities</a></li>
-                                    <li><a href="#">Login</a></li>
-                              </ul>
-                        </div>
-                  </nav>
-
-            </header>
-          </body>
-          </html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OHIO_GS</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <header class="wrapper">
+            <h1><a href="{% url 'home' %}">Ohio GuidStones</a></h1>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    <li><a href="{% url 'articles:create' %}" class="highlight">New Post</a></li>
+                    {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        {% if user.is_authenticated == False %}
+          <div class="tt">
+            <p class="req">#Please Login to see event details</p>
+          </div>
+        {% endif %}
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
