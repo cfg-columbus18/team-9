@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Nav from '../../components/Nav';
 
-export default class Home extends Component {
-  openDrawer = () => {
-    this.props.navigation.openDrawer();
-  }
-  closeDrawer = () => {
-    this.props.navigation.closeDrawer();
-  }
+export default class Test extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Nav />
         <View style={styles.main}>
-          <Text>Home</Text>
-        </View>
-        <View style={styles.main}>
-          <TouchableOpacity onPress={this.openDrawer}>
-            <View style={styles.button}>
-              <Text>Open Drawer</Text>
-            </View>
-          </TouchableOpacity>
+          <Text>Test</Text>
         </View>
       </View>
     )
@@ -41,7 +30,6 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center'
   }

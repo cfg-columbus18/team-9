@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Nav from '../../components/Nav';
 
 export default class Appointments extends Component {
-  openSetAppointment = () => {
-    Alert.alert('SetAppointment')
+  constructor(props){
+    super(props);
+    this.state = {
+      LastAptDate: '2018-05-05',
+    };
   }
-
+  
+  navigateToPickDate = () => {
+    this.props.navigation.navigate('DatePick')
+  }
   render() {
     return (
       <View style={styles.main}>
-        <TouchableOpacity onPress={this.openSetAppointment}>
+        <Nav />
+        <TouchableOpacity onPress={this.navigateToPickDate}>
           <View 
             style = {styles.button}
-            onPress = {this.openSetAppointment}
+            onPress = {this.navigateToPickDate}
             ><Text style={styles.text}>Set Next Appointment!!</Text></View>
+          </TouchableOpacity>
           <Text style={styles.h1}>Last Appointment</Text>
           <Text style={styles.h2}>2018-26-10</Text>
-        </TouchableOpacity>
       </View>
     )
   }
@@ -41,7 +49,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
     alignSelf: "center",
-    color: 'red'
+    color: 'white'
   },
 
   h1: {

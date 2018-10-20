@@ -9,25 +9,28 @@
 import React, {Component} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import Template from './routes/Template/Template';
+import { Icon } from 'react-native-elements';
+import Survey from './routes/Preferences/Survey';
+import Badges from './routes/Badges/Badges';
+import Appointments from './routes/Appointments/Appointments';
+import Preferences from './routes/Preferences/Preferences';
+import Summary from './routes/Summary/Summary';
 
 const DrawerStack = createDrawerNavigator({
-  Template: Template,
+  Survey: Survey,
+  Badges: Badges,
+  Appointments: Appointments,
+  Preferences: Preferences,
+  Summary: Summary
 }, {
-  initialRouteName: 'Template',
+  initialRouteName: 'Survey',
   drawerPosition: 'left',
-});
-
-const RootStack = createStackNavigator({
-  Root: DrawerStack
-}, {
-  initialRouteName: 'Root',
 });
 
 export default class App extends Component {
   render() {
     return (
-      <RootStack />
+      <DrawerStack />
     );
   }
 }
