@@ -3,10 +3,22 @@ import { Button, Image, StyleSheet, Text, View } from 'react-native';
 import quotes from '../../sample-quotes.js';
 
 class QuoteGenerator extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      quotes: quotes
+    }
+  }
+  
+  randomQuote() {
+    return quotes[Math.floor(Math.random() * Math.floor(5))].desc
+  }
+  
   render() {
     return (
       <View>
-        <Text>Hello World!</Text>
+        <Text>{this.randomQuote()}</Text>
       </View>
     )
   }
