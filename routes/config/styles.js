@@ -24,6 +24,14 @@ export default StyleSheet.create({
         margin: 10,    
     },
 
+    sub: {
+        flex: 0.825,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
     instructions: {
         textAlign: 'center',
         color: '#333333',
@@ -37,12 +45,20 @@ export default StyleSheet.create({
         backgroundColor: '#FFF3F3',
     },
 
+    badgeimage: {
+        width: 30,
+        height: 30,
+        margin: 10,
+    },
+
     main: {
         justifyContent: 'flex-start',
     },
 
-    header: {
-
+    badge: {
+        flex: 0.175, 
+        alignItems: 'center', 
+        justifyContent: 'center'
     },
 
     title: {

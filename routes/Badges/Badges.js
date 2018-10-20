@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-import { Badge } from 'react-native-material-ui';
+import { Dimensions, View, Text, Image } from 'react-native';
 import Nav from '../../components/Nav';
+import StyleSheet from '../config/styles'
 
 export default class Badges extends Component {
   constructor() {
@@ -125,41 +125,25 @@ export default class Badges extends Component {
   render() {
     const { badges } = this.state;
     return (
-      <View style={styles.main}>
-        <Nav />
-        <View style={{flex: 0.175, alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={{fontWeight: '500', fontSize: 28}}>Badges</Text>
+      <View style={StyleSheet.main}>
+        <Nav/>
+        <View style={StyleSheet.container}>
+        <View style={StyleSheet.badge}>
+          <Text style={StyleSheet.welcome}>Badges</Text>
         </View>
-        <View style={styles.sub}>
+        <View style={StyleSheet.sub}>
           {Object.values(badges).map((badge, i) => {
-            const size = 40;
-            // <View style={{width: 100, backgroundColor: 'yellow', height: 50}}>
             return (
               <View key={i} style={{ padding: 15, margin: 10, backgroundColor: 'grey', borderRadius: 100, borderColor: '#000', borderWidth: 2 }}>
-                <Image source={badge.file} style={{ width: size, height: size }} />
+                <Image source={badge.file} style={StyleSheet.badgeimage} />
               </View>
             );
         })}
         </View>
+      </View>
       </View>
     )
   }
 }
 
 const window = Dimensions.get('window');
-const styles = StyleSheet.create({
-  // https://facebook.github.io/react-native/docs/stylesheet
-  main: {
-    flex: 1,
-    // backgroundColor: 'orange',
-    alignItems: 'center',
-    justifyContent: 'space-around'
-  },
-  sub: {
-    flex: 0.825,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-})
