@@ -1,36 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Nav from '../../components/Nav';
+import StyleSheet from '../config/styles'
 
 export default class Test extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Nav />
-        <View style={styles.main}>
-          <Text>Test</Text>
+      <View style = {StyleSheet.main}>
+      <Nav/>
+      <View style={StyleSheet.container}>
+        <Text style={StyleSheet.welcome}>Welcome Back</Text>
         </View>
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  main: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%'
-  },
-  button: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
