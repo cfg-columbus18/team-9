@@ -9,7 +9,11 @@ class QuoteGenerator extends Component {
     this.state = {
       quotes: quotes
     }
-  } 
+  }
+  
+  randomQuote() {
+    return quotes[Math.floor(Math.random() * Math.floor(5))].desc
+  }
   
   render() {
     return (
