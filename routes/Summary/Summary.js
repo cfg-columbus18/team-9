@@ -52,7 +52,7 @@ unpdateLang = (lang) =>{
                   
                     <Image
                          style={{width: 50, height: 50,
-                        marginTop: 40,
+                        marginTop: 60,
                         marginLeft:-4,
                         marginRight:30
                         }}
@@ -75,7 +75,7 @@ unpdateLang = (lang) =>{
                   </Text>
                   <Image
                          style={{width: 50, height: 50,
-                        marginTop: 11,
+                        marginTop: -5,
                         marginLeft: 115}}
                        source={{uri:'https://static.thenounproject.com/png/715388-200.png'}}
                     />
@@ -126,27 +126,27 @@ const styles = StyleSheet.create({
 
   
   textTwo: {
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 25
     
   },
 
   first: {
-    marginTop: 10,
+    marginTop: 25,
     marginRight: 50,
     marginLeft: 15,
     width: 150
   },
 
    second: {
-    marginTop: 10,
+    marginTop: 25,
     marginRight:-120,
     marginLeft: 15,
     width: 150
   },
 
   third: {
-    marginTop: -110,
-    marginLeft:60
+    marginTop: 20,
+    marginLeft:60,
   },
 })

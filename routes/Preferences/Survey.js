@@ -13,13 +13,17 @@ export default class Call extends Component {
     };
   }
   handleFeelingSelect = (feeling) => {
+    const incrementPoints = this.props.navigation.getScreenProps().incrementPoints;
     this.setState({ feeling: feeling }, () => {
       if (this.state.feeling === 'sad') {
         Alert.alert(
           "Phone a friend.",
           "Talking out loud about what’s going on in your head and explaining it to someone else, helps you to clarify the things that are worrying you.",
           [
-            {text: "Yes", onPress: ()=>Communications.phonecall('', true)},
+            {text: "Yes", onPress: ()=> {
+              incrementPoints();
+              Communications.phonecall('', true)}
+            },
             {text: "No", onPress: ()=>Alert.alert("", "Maybe next time.")},
           ]
         );
@@ -28,7 +32,10 @@ export default class Call extends Component {
           "Let's go for a walk.",
           "Going for a walk will help you strengthen your bones and muscles, improve your mood, and improve your balance and coordination.",
           [
-            {text: "Yes", onPress: ()=>Alert.alert("", "Let's make this a daily routine!")},
+            {text: "Yes", onPress: ()=> {
+              incrementPoints();
+              Alert.alert("", "Let's make this a daily routine!")}
+            },
             {text: "No", onPress: ()=>Alert.alert("", "Maybe next time.")},
           ]
         );
@@ -37,7 +44,10 @@ export default class Call extends Component {
           "Meditate.",
           "Meditation helps to regulate mood and relieve stress.",
           [
-            {text: "Yes", onPress: ()=>Alert.alert("", "Breathe in, and count to four. Breathe out, and count to four.")},
+            {text: "Yes", onPress: ()=> {
+              incrementPoints();
+              Alert.alert("", "Breathe in, and count to four. Breathe out, and count to four.")}
+            },
             {text: "No", onPress: ()=>Alert.alert("", "Maybe next time.")},
           ]
         );

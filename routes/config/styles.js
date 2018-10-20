@@ -49,7 +49,7 @@ export default StyleSheet.create({
     badgeimage: {
         width: 30,
         height: 30,
-        margin: 10,
+        margin: 6,
     },
 
     main: {
@@ -57,7 +57,7 @@ export default StyleSheet.create({
     },
 
     badge: {
-        flex: 0.175, 
+        flex: 0.125, 
         alignItems: 'center', 
         justifyContent: 'center'
     },

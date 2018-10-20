@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import StyleSheet from '../config/styles';
-import Nav from '../../components/Nav';
 
 export default class DatePick extends Component {
     constructor(props) {
@@ -15,9 +14,6 @@ export default class DatePick extends Component {
             
       render() {
         return (
-
-            <View style={StyleSheet.main}>
-            <Nav/>
             <View style={StyleSheet.container}>
             <Text style={StyleSheet.text}>Select Appointment Date</Text>
             <TouchableOpacity onPress={this.openSetAppointment}>
@@ -70,8 +66,7 @@ export default class DatePick extends Component {
             <Text style={StyleSheet.text}>Submit</Text>
             </TouchableOpacity>
             </View>
-            </View>   
-      </View>
+            </View>
     )
   }
 }

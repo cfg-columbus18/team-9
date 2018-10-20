@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
+import PastAppointments from './PastAppointments';
+import DatePick from './DatePick';
 import Nav from '../../components/Nav';
 import StyleSheet from '../config/styles';
 
 export default class Appointments extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      LastAptDate: '2018-05-05',
-    };
-  }
-  
-  navigateToPickDate = () => {
-    this.props.navigation.navigate('DatePick')
-  }
+  constructor() {
+    super();
 
+    this.state = {
+      stack: 'PastAppointments'
+    }
+  }
+  navigateToPickDate = () => {
+    this.setState({ stack: 'DatePick' });
+  }
   render() {
+    const { stack } = this.state;
+    const Navigator = stack === 'PastAppointments' ? PastAppointments : stack === 'DatePick' ? DatePick : null;
     return (
       <View style={StyleSheet.main}>
         <Nav/>
-        <View style={StyleSheet.container}>
-        <TouchableOpacity onPress={this.navigateToPickDate}>
-          <View style = {StyleSheet.button}
-            onPress = {this.navigateToPickDate}>
-            <Text style={StyleSheet.buttontext}>Set Next Appointment!!</Text></View>
-          </TouchableOpacity>
-          <Text style={StyleSheet.text}>Last Appointment</Text>
-          <Text style={StyleSheet.text}>2018-26-10</Text>
-      </View>
+        <Navigator navigateToPickDate={this.navigateToPickDate} />
       </View>
     )
   }

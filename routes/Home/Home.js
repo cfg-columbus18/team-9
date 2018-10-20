@@ -13,16 +13,17 @@ export default class Test extends Component {
   }
 }
   randomQuote() {
-    return quotes[Math.floor(Math.random() * Math.floor(5))].desc
+    return quotes[Math.floor(Math.random() * Math.floor(5))]
   }
 
   render() {
+    const quote = this.randomQuote();
     return (
-      <View style = {StyleSheet.main}>
+      <View style = {[StyleSheet.main, {alignItems: 'center'}]}>
       <Nav/>
-      <View style={StyleSheet.container}>
-        <Text style={StyleSheet.welcome}>Welcome</Text>
-        <Text style={StyleSheet.text}>{this.randomQuote()}</Text>
+      <View style={[StyleSheet.container, {width: '87.5%'}]}>
+        <Text style={[StyleSheet.welcome, {textAlign: 'center'}]}>Welcome</Text>
+        <Text style={[StyleSheet.text, {color: '#000', textAlign: 'center'}]}>{`${quote.desc} - ${quote.author}`}</Text>
         </View>
       </View>
     )

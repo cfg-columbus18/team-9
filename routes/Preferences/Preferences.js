@@ -44,8 +44,8 @@ unpdateColor = (color) =>{
                      style={{ height: 50, width: 150 }}
                      onValueChange = {this.unpdateLoc}
                      >
-                <Picker.Item label= "County 1" value= "County 1"/>
-                <Picker.Item label= "County 2" value= "County 2"/>
+                <Picker.Item label= "Fairfield" value= "Fairfield"/>
+                <Picker.Item label= "Franklin" value= "Franklin"/>
                 </Picker>
             </View>
             <View style={{height: 80, width: '100%', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
@@ -61,8 +61,8 @@ unpdateColor = (color) =>{
                 </Picker>
             </View>
             <View style={{height: 80, width: '100%', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
-            <Text style={StyleSheet.textsub}> Contacts: </Text>
-                <Text style={StyleSheet.textsub}> Contact 1: </Text>
+            {/* <Text style={StyleSheet.textsub}> Contacts: </Text> */}
+                <Text style={StyleSheet.textsub}> Emergency Contact: </Text>
                      <TextInput
                         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
                         onChangeText={(text) => this.setState({text})}

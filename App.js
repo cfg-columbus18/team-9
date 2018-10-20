@@ -13,16 +13,27 @@ const DrawerStack = createDrawerNavigator({
   'Survey': Survey,
   'Badges': Badges,
   'Appointments': Appointments,
-  'Date Picker': DatePick,
+  // 'Date Picker': DatePick,
   'Preferences': Preferences,
   'Mood Reader': MockReader,
   'Summary': Summary
 });
 
 export default class App extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      points: 0,
+    }
+  }
+  incrementPoints = () => {
+    const points = this.state.points;
+    this.setState({ points: points < 12 ? points + 1 : 12 });
+  }
   render() {
     return (
-      <DrawerStack />
+      <DrawerStack screenProps={{ points: this.state.points, incrementPoints: this.incrementPoints }} />
     );
   }
 }

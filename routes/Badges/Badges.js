@@ -124,6 +124,7 @@ export default class Badges extends Component {
   }
   render() {
     const { badges } = this.state;
+    const points = this.props.navigation.getScreenProps().points;
     return (
       <View style={StyleSheet.main}>
         <Nav/>
@@ -132,7 +133,7 @@ export default class Badges extends Component {
           <Text style={StyleSheet.welcome}>Badges</Text>
         </View>
         <View style={StyleSheet.sub}>
-          {Object.values(badges).map((badge, i) => {
+          {Object.values(badges).slice(0, points).map((badge, i) => {
             return (
               <View key={i} style={{ padding: 15, margin: 10, backgroundColor: 'grey', borderRadius: 100, borderColor: '#000', borderWidth: 2 }}>
                 <Image source={badge.file} style={StyleSheet.badgeimage} />
