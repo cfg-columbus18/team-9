@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
 import Communications from 'react-native-communications';
-import { Icon, Header } from 'react-native-elements';
+import { Button, Icon, Header } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import StyleSheet from '../routes/config/styles';
 
@@ -16,7 +16,8 @@ class Nav extends Component {
       </TouchableWithoutFeedback>
     </View>;
     const right = <View style={{ height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-      <Icon name="telephone" type="foundation" color="#ff0000" size={18} containerStyle={{ marginRight: 25 }} reverse onPress={this.callCrisisHotline} />
+    {/* <Icon name="telephone" type="foundation" color="#ff0000" size={18} containerStyle={{ marginRight: 25 }} reverse /> */}
+      <Button icon={{name: 'telephone', type: 'foundation', color: '#fff'}} buttonStyle={{ backgroundColor: '#ff0000' }} textStyle={{ fontWeight: '900' }} title="Crisis" borderRadius={10} onPress={this.callCrisisHotline} />
     </View>;
     return (
       <Header 
